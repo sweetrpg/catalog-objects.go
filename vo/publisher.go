@@ -6,6 +6,8 @@ import (
 	modelcore "github.com/sweetrpg/model-core/vo"
 )
 
+// Publisher value object.
+// This value object is a serializable representation of the Publisher model.
 type PublisherVO struct {
 	ID         string                 `json:"id" jsonapi:"primary,publisher"`
 	Name       string                 `json:"name" jsonapi:"attr,name"`

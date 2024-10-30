@@ -6,6 +6,8 @@ import (
 	modelcore "github.com/sweetrpg/model-core/vo"
 )
 
+// Studio value object.
+// This value object is a serializable representation of the Studio model.
 type StudioVO struct {
 	ID         string                 `json:"id" jsonapi:"primary,studio"`
 	Name       string                 `json:"name" jsonapi:"attr,name"`

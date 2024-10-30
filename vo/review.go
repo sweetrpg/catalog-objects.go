@@ -4,6 +4,8 @@ import (
 	modelcore "github.com/sweetrpg/model-core/vo"
 )
 
+// Review value object.
+// This value object is a serializable representation of the Review model.
 type ReviewVO struct {
 	ID       string            `json:"id" jsonapi:"primary,review"`
 	Title    string            `json:"title" jsonapi:"attr,title"`

@@ -4,6 +4,8 @@ import (
 	modelcore "github.com/sweetrpg/model-core/vo"
 )
 
+// Contribution value object.
+// This value object is a serializable representation of the Contribution model.
 type ContributionVO struct {
 	ID     string    `json:"id" jsonapi:"primary,contribution"`
 	Person *PersonVO `json:"person,omitempty" jsonapi:"relation,person,omitempty"`
