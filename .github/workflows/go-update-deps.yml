@@ -9,6 +9,7 @@ on:
     repository_dispatch:
         types:
             - common-published
+            - model-core-published
 
 jobs:
     tests:
