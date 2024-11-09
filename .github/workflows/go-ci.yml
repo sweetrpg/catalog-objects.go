@@ -11,11 +11,6 @@ on:
             - go.sum
             - .go-version
     workflow_dispatch:
-    repository_dispatch:
-        types:
-            - common-published
-            - model-core-published
-            - db-published
 
 jobs:
     tests:

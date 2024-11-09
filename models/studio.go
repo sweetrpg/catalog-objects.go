@@ -11,7 +11,7 @@ import (
 type Studio struct {
 	ID         string               `bson:"_id" json:"id" jsonapi:"primary,studio"`
 	Name       string               `json:"name" jsonapi:"attr,name"`
-	Website    url.URL              `bson:"website" json:"website" jsonapi:"attr,website"`
+	URL        url.URL              `bson:"url" json:"url" jsonapi:"attr,url"`
 	Notes      string               `json:"notes" jsonapi:"attr,notes"`
 	Properties []modelcore.Property `json:"properties" jsonapi:"attr,properties"`
 	Tags       []modelcore.Tag      `json:"tags" jsonapi:"attr,tags"`

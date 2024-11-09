@@ -10,6 +10,7 @@ on:
         types:
             - common-published
             - model-core-published
+            - db-published
 
 jobs:
     tests:
