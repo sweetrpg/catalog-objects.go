@@ -12,7 +12,7 @@ type PublisherVO struct {
 	ID         string                 `json:"id" jsonapi:"primary,publisher"`
 	Name       string                 `json:"name" jsonapi:"attr,name"`
 	Address    string                 `json:"address" jsonapi:"attr,address"`
-	URL        url.URL                `bson:"url" json:"url" jsonapi:"attr,url"`
+	Website    url.URL                `json:"website" jsonapi:"attr,website"`
 	Notes      string                 `json:"notes" jsonapi:"attr,notes"`
 	Properties []modelcore.PropertyVO `json:"properties" jsonapi:"attr,properties"`
 	Tags       []modelcore.TagVO      `json:"tags" jsonapi:"attr,tags"`
