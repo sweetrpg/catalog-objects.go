@@ -1,7 +1,7 @@
-module github.com/sweetrpg/catalog-objects
+module github.com/sweetrpg/catalog-objects.go
 
-go 1.23.2
+go 1.24.2
 
-require github.com/sweetrpg/model-core v0.0.159
+require github.com/sweetrpg/model-core.go v0.0.159
 
-require github.com/sweetrpg/common v0.0.7 // indirect
+require github.com/sweetrpg/common.go v0.0.10 // indirect
