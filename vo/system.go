@@ -1,7 +1,7 @@
 package vo
 
 import (
-	modelcore "github.com/sweetrpg/model-core/vo"
+	modelcore "github.com/sweetrpg/model-core.go/vo"
 )
 
 // System value object.

@@ -1,6 +1,6 @@
 name: Update Dependencies
 
-concurrency: deps-${{ github.ref }}
+concurrency: deps
 
 on:
     workflow_dispatch:
@@ -12,18 +12,19 @@ on:
             - model-core-published
             - db-published
 
+permissions:
+    contents: write
+
 jobs:
     tests:
-        name: ${{ matrix.name }}
+        name: Update dependencies for ${{ matrix.name }}
         runs-on: ${{ matrix.os }}
         strategy:
             fail-fast: false
             matrix:
                 include:
-                    - {
-                          name: Linux,
-                          os: ubuntu-latest,
-                      }
+                    - name: Linux
+                      os: ubuntu-latest
         steps:
             - uses: actions/checkout@v4
             - name: Set up Go

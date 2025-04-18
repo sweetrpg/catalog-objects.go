@@ -1,6 +1,6 @@
 package models
 
-import modelcore "github.com/sweetrpg/model-core/models"
+import modelcore "github.com/sweetrpg/model-core.go/models"
 
 // Review model.
 // This model represents a review on an RPG resource.

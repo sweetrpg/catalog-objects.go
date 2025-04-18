@@ -3,7 +3,7 @@ package models
 import (
 	"net/url"
 
-	modelcore "github.com/sweetrpg/model-core/models"
+	modelcore "github.com/sweetrpg/model-core.go/models"
 )
 
 // License model.

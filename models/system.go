@@ -1,6 +1,6 @@
 package models
 
-import modelcore "github.com/sweetrpg/model-core/models"
+import modelcore "github.com/sweetrpg/model-core.go/models"
 
 // System model.
 // This model represents a game system that RPG resources can be associated with.

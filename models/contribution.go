@@ -1,7 +1,7 @@
 package models
 
 import (
-	modelcore "github.com/sweetrpg/model-core/models"
+	modelcore "github.com/sweetrpg/model-core.go/models"
 )
 
 // Contribution model.

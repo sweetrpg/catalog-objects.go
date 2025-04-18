@@ -3,7 +3,7 @@ package vo
 import (
 	"net/url"
 
-	modelcore "github.com/sweetrpg/model-core/vo"
+	modelcore "github.com/sweetrpg/model-core.go/vo"
 )
 
 // Publisher value object.

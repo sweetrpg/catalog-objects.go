@@ -1,6 +1,6 @@
 package models
 
-import modelcore "github.com/sweetrpg/model-core/models"
+import modelcore "github.com/sweetrpg/model-core.go/models"
 
 // Volume model.
 // This model represents an RPG volume.

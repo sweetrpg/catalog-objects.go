@@ -1,6 +1,6 @@
 package models
 
-import modelcore "github.com/sweetrpg/model-core/models"
+import modelcore "github.com/sweetrpg/model-core.go/models"
 
 // Person model.
 // This model represents a person involved in the production of an RPG resource.
