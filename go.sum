@@ -1,8 +1,4 @@
-github.com/sweetrpg/common v0.0.7 h1:cAGLhGbfTWLVS9yV39wqr/oHvs8sM0sXsHBI+M+RiJU=
-github.com/sweetrpg/common v0.0.7/go.mod h1:4yamZns+1PmHHYPgJh+X8JuQoF4uTZNZEcnkwUEbauY=
 github.com/sweetrpg/common.go v0.0.12 h1:wrLpD5relZ2hZtHd8Uuv+v7nXbeiQD10/nCGC9apUVM=
 github.com/sweetrpg/common.go v0.0.12/go.mod h1:PVpjDIeB/bZYJZk5fc8whuqVJE8K5k/DsO3o+aZFEcE=
-github.com/sweetrpg/model-core v0.0.159 h1:lChVDMNWEdMPSP4L8pUPFyiWcxlGZh4iDeOQgu+jD7Q=
-github.com/sweetrpg/model-core v0.0.159/go.mod h1:THbmvZVpQXPl27C4U1shWs4lm6twKBJZWVIMWM3clqM=
 github.com/sweetrpg/model-core.go v0.0.165 h1:tpNiwSP3twfL/NlWDmwBmajJF1dMMYVf5keh64h+7BQ=
 github.com/sweetrpg/model-core.go v0.0.165/go.mod h1:EYmuwUjUo4WiveBpjw+st5YB3wKSsc28Qc16Ba0on50=
