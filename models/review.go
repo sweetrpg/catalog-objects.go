@@ -9,7 +9,7 @@ type Review struct {
 	Title    string          `json:"title" jsonapi:"attr,title"`
 	Body     string          `bson:"body" json:"body" jsonapi:"attr,body"`
 	Language string          `json:"language" jsonapi:"attr,language"`
-	VolumeId string          `json:"volume_id" jsonapi:"relation,volume"`
+	VolumeId string          `bson:"volume_id" json:"volume_id" jsonapi:"relation,volume"`
 	Notes    string          `json:"notes" jsonapi:"attr,notes"`
 	Tags     []modelcore.Tag `json:"tags" jsonapi:"attr,tags"`
 	modelcore.Auditable
