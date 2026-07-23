@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## 0.0.196 - 2026-07-23
+
+### Documentation
+- Update README (#42)
+
+### Fixed
+- Add missing bson tags on Review.VolumeId and System.GameSystem (#41)
+
 ## [Unreleased]
 
 ### Added
