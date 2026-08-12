@@ -9,6 +9,7 @@ type Volume struct {
 	Title        string               `json:"title" jsonapi:"attr,title"`
 	Description  string               `bson:"description" json:"description" jsonapi:"attr,description"`
 	Notes        string               `json:"notes" jsonapi:"attr,notes"`
+	Format       string               `bson:"format" json:"format" jsonapi:"attr,format"`
 	SystemIds    []string             `bson:"system_ids" json:"system_ids" jsonapi:"relation,system"`
 	PublisherIds []string             `bson:"publisher_ids" json:"publisher_ids" jsonapi:"relation,publisher"`
 	StudioIds    []string             `bson:"studio_ids" json:"studio_ids" jsonapi:"relation,studio"`
