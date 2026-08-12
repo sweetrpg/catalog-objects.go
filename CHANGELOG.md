@@ -1,3 +1,17 @@
+
+## 0.0.196 - 2026-08-12
+
+### Documentation
+- Update README (#42)
+
+
+### Fixed
+- Add missing bson tags on Review.VolumeId and System.GameSystem (#41)
+- Use pointer slices for VolumeVO's relationship fields
+
+
+## 0.0.1 - 2023-07-11
+
 # Changelog
 
 All notable changes to this project will be documented in this file.
