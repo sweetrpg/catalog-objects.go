@@ -1,3 +1,10 @@
+
+## 0.2.0 - 2026-08-12
+
+### Added
+- Add CoverAssetId and SampleAssetIds fields
+
+
 # Changelog
 
 All notable changes to this project will be documented in this file.
