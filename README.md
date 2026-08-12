@@ -1,6 +1,7 @@
 # catalog-objects.go
 
 [![CI](https://github.com/sweetrpg/catalog-objects.go/actions/workflows/ci.yaml/badge.svg)](https://github.com/sweetrpg/catalog-objects.go/actions/workflows/ci.yaml)
+[![Coverage](https://img.shields.io/endpoint?url=https://sweetrpg.github.io/catalog-objects.go/coverage-badge.json)](https://sweetrpg.github.io/catalog-objects.go/)
 [![License](https://img.shields.io/github/license/sweetrpg/catalog-objects.go.svg)](https://img.shields.io/github/license/sweetrpg/catalog-objects.go.svg)
 [![Issues](https://img.shields.io/github/issues/sweetrpg/catalog-objects.go.svg)](https://img.shields.io/github/issues/sweetrpg/catalog-objects.go.svg)
 [![PRs](https://img.shields.io/github/issues-pr/sweetrpg/catalog-objects.go.svg)](https://img.shields.io/github/issues-pr/sweetrpg/catalog-objects.go.svg)

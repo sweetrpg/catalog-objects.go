@@ -1,5 +1,5 @@
 
-## 0.0.196 - 2026-07-23
+## 0.0.196 - 2026-08-12
 
 ### Documentation
 - Update README (#42)
@@ -7,7 +7,10 @@
 
 ### Fixed
 - Add missing bson tags on Review.VolumeId and System.GameSystem (#41)
+- Use pointer slices for VolumeVO's relationship fields
 
+
+## 0.0.1 - 2023-07-11
 
 # Changelog
 
@@ -25,3 +28,13 @@ All notable changes to this project will be documented in this file.
   MongoDB's default codec persists the fields as `volumeid`/`gamesystem` (no underscore),
   inconsistent with every sibling field's explicit snake_case tag (e.g. `Contribution.VolumeId`
   -> `volume_id`), silently breaking any filter/query built against the expected field name.
+- `VolumeVO.Systems/Publishers/Studios/Licenses` were value slices (`[]T`); the `jsonapi`
+  library's relationship marshaling panics on a non-pointer element. Changed to `[]*T`.
+
+## 0.0.196 - 2026-07-23
+
+### Documentation
+- Update README (#42)
+
+### Fixed
+- Add missing bson tags on Review.VolumeId and System.GameSystem (#41)
