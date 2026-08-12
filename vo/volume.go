@@ -18,6 +18,7 @@ type VolumeVO struct {
 	Title       string                 `json:"title" jsonapi:"attr,title"`
 	Description string                 `json:"description" jsonapi:"attr,description"`
 	Notes       string                 `json:"notes" jsonapi:"attr,notes"`
+	Format      string                 `json:"format" jsonapi:"attr,format"`
 	Systems     []*SystemVO            `json:"systems" jsonapi:"relation,system"`
 	Publishers  []*PublisherVO         `json:"publishers" jsonapi:"relation,publisher"`
 	Studios     []*StudioVO            `json:"studios" jsonapi:"relation,studio"`
