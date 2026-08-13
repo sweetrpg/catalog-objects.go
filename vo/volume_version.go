@@ -10,7 +10,7 @@ import (
 // This value object is a serializable representation of the VolumeVersion model.
 type VolumeVersionVO struct {
 	ID             string                 `json:"id" jsonapi:"primary,volume_version"`
-	RecordID       string                 `json:"record_id" jsonapi:"attr,record_id"`
+	RecordID       string                 `json:"recordId" jsonapi:"attr,record_id"`
 	Version        int                    `json:"version" jsonapi:"attr,version"`
 	Title          string                 `json:"title" jsonapi:"attr,title"`
 	Description    string                 `json:"description" jsonapi:"attr,description"`
@@ -26,11 +26,11 @@ type VolumeVersionVO struct {
 	Tags           []modelcore.TagVO      `json:"tags" jsonapi:"attr,tags"`
 
 	State            VersionState `json:"state" jsonapi:"attr,state"`
-	BaseVersion      *int         `json:"base_version" jsonapi:"attr,base_version,omitempty"`
-	SubmittedBy      string       `json:"submitted_by" jsonapi:"attr,submitted_by"`
-	SubmittedAt      time.Time    `json:"submitted_at" jsonapi:"attr,submitted_at"`
-	ReviewedBy       *string      `json:"reviewed_by" jsonapi:"attr,reviewed_by,omitempty"`
-	ReviewedAt       *time.Time   `json:"reviewed_at" jsonapi:"attr,reviewed_at,omitempty"`
-	ReviewNote       *string      `json:"review_note" jsonapi:"attr,review_note,omitempty"`
-	ResultingVersion *int         `json:"resulting_version" jsonapi:"attr,resulting_version,omitempty"`
+	BaseVersion      *int         `json:"baseVersion,omitempty" jsonapi:"attr,base_version,omitempty"`
+	SubmittedBy      string       `json:"submittedBy" jsonapi:"attr,submitted_by"`
+	SubmittedAt      time.Time    `json:"submittedAt" jsonapi:"attr,submitted_at"`
+	ReviewedBy       *string      `json:"reviewedBy,omitempty" jsonapi:"attr,reviewed_by,omitempty"`
+	ReviewedAt       *time.Time   `json:"reviewedAt,omitempty" jsonapi:"attr,reviewed_at,omitempty"`
+	ReviewNote       *string      `json:"reviewNote,omitempty" jsonapi:"attr,review_note,omitempty"`
+	ResultingVersion *int         `json:"resultingVersion,omitempty" jsonapi:"attr,resulting_version,omitempty"`
 }
