@@ -10,4 +10,5 @@ const (
 	VersionStateArchived          VersionState = "archived"
 	VersionStateRejected          VersionState = "rejected"
 	VersionStatePartiallyAccepted VersionState = "partially_accepted"
+	VersionStateWithdrawn         VersionState = "withdrawn"
 )
