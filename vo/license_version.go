@@ -1,15 +1,13 @@
 package vo
 
 import (
-	"net/url"
-
 	modelcore "github.com/sweetrpg/model-core.go/vo"
 )
 
 // LicenseVersionVO value object - see models.LicenseVersion. Note the internal model field
 // LicenseVer/version_label maps back onto this VO's Version/"version" - the public read shape is
 // unaffected by the internal rename needed to avoid colliding with the version record's own
-// Version int field.
+// Version int field. Website is a plain string, not url.URL - see PublisherVO's comment.
 type LicenseVersionVO struct {
 	ID           string                 `json:"id" jsonapi:"primary,license_version"`
 	RecordID     string                 `json:"recordId" jsonapi:"attr,record_id"`
@@ -19,7 +17,7 @@ type LicenseVersionVO struct {
 	LicenseVer   string                 `json:"licenseVersion" jsonapi:"attr,license_version"`
 	Deed         string                 `json:"deed" jsonapi:"attr,deed"`
 	LegalCode    string                 `json:"legalCode" jsonapi:"attr,legal_code"`
-	Website      url.URL                `json:"website" jsonapi:"attr,website"`
+	Website      string                 `json:"website" jsonapi:"attr,website"`
 	Status       string                 `json:"status" jsonapi:"attr,status"`
 	Availability string                 `json:"availability" jsonapi:"attr,availability"`
 	Notes        string                 `json:"notes" jsonapi:"attr,notes"`
