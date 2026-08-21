@@ -1,4 +1,11 @@
 
+## 0.4.2 - 2026-08-21
+
+### Fixed
+- Serialize GameSystem as the "name" JSON:API attribute
+
+
+
 ## 0.4.1 - 2026-08-18
 
 
