@@ -8,6 +8,9 @@
 
 ## 0.4.1 - 2026-08-18
 
+
+## 0.4.1 - 2026-08-18
+
 ### Fixed
 - Serialize publisher/studio/license website as a string, not url.URL
 
