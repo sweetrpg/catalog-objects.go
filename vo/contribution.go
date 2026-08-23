@@ -10,7 +10,7 @@ type ContributionVO struct {
 	ID     string    `json:"id" jsonapi:"primary,contribution"`
 	Person *PersonVO `json:"person,omitempty" jsonapi:"relation,person,omitempty"`
 	Volume *VolumeVO `json:"volume,omitempty" jsonapi:"relation,volume,omitempty"`
-	Roles  []string  `jsonapi:"attr,roles"`
+	Role   string    `jsonapi:"attr,role"`
 	Notes  string    `json:"notes" jsonapi:"attr,notes"`
 	modelcore.AuditableVO
 }
