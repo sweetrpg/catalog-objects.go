@@ -1,4 +1,15 @@
 
+## 0.5.0 - 2026-09-02
+
+### Added
+- Add SystemTitles denormalized map to model and VO
+
+
+### Fixed
+- Use camelCase jsonapi attr name for SystemTitles
+
+
+
 ## 0.4.3 - 2026-08-23
 
 ### Fixed
