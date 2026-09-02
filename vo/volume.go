@@ -14,18 +14,22 @@ import (
 // relationships were ever actually populated through the write path until
 // durable-volume-editing's publisher/studio linking exercised it for the first time.
 type VolumeVO struct {
-	ID             string                 `json:"id" jsonapi:"primary,volume"`
-	Title          string                 `json:"title" jsonapi:"attr,title"`
-	Description    string                 `json:"description" jsonapi:"attr,description"`
-	Notes          string                 `json:"notes" jsonapi:"attr,notes"`
-	Format         string                 `json:"format" jsonapi:"attr,format"`
-	CoverAssetId   string                 `json:"coverAssetId" jsonapi:"attr,coverAssetId"`
-	SampleAssetIds []string               `json:"sampleAssetIds" jsonapi:"attr,sampleAssetIds"`
-	Systems        []*SystemVO            `json:"systems" jsonapi:"relation,system"`
-	Publishers     []*PublisherVO         `json:"publishers" jsonapi:"relation,publisher"`
-	Studios        []*StudioVO            `json:"studios" jsonapi:"relation,studio"`
-	Licenses       []*LicenseVO           `json:"licenses" jsonapi:"relation,license"`
-	Properties     []modelcore.PropertyVO `json:"properties" jsonapi:"attr,properties"`
-	Tags           []modelcore.TagVO      `json:"tags" jsonapi:"attr,tags"`
+	ID             string      `json:"id" jsonapi:"primary,volume"`
+	Title          string      `json:"title" jsonapi:"attr,title"`
+	Description    string      `json:"description" jsonapi:"attr,description"`
+	Notes          string      `json:"notes" jsonapi:"attr,notes"`
+	Format         string      `json:"format" jsonapi:"attr,format"`
+	CoverAssetId   string      `json:"coverAssetId" jsonapi:"attr,coverAssetId"`
+	SampleAssetIds []string    `json:"sampleAssetIds" jsonapi:"attr,sampleAssetIds"`
+	Systems        []*SystemVO `json:"systems" jsonapi:"relation,system"`
+	// SystemTitles: denormalized system display names keyed by system ID. On a read it carries
+	// the stored snapshot; on a write it is an advisory hint (catalog-api overwrites it from an
+	// authoritative game-systems-api lookup when reachable).
+	SystemTitles map[string]string      `json:"systemTitles,omitempty" jsonapi:"attr,systemTitles,omitempty"`
+	Publishers   []*PublisherVO         `json:"publishers" jsonapi:"relation,publisher"`
+	Studios      []*StudioVO            `json:"studios" jsonapi:"relation,studio"`
+	Licenses     []*LicenseVO           `json:"licenses" jsonapi:"relation,license"`
+	Properties   []modelcore.PropertyVO `json:"properties" jsonapi:"attr,properties"`
+	Tags         []modelcore.TagVO      `json:"tags" jsonapi:"attr,tags"`
 	modelcore.AuditableVO
 }
