@@ -24,7 +24,7 @@ type VolumeVersionVO struct {
 	StagedSampleAssetIds []string    `json:"stagedSampleAssetIds,omitempty" jsonapi:"attr,staged_sample_asset_ids,omitempty"`
 	Systems              []*SystemVO `json:"systems" jsonapi:"relation,system"`
 	// SystemTitles: denormalized system display names keyed by system ID - see VolumeVO.
-	SystemTitles map[string]string      `json:"systemTitles,omitempty" jsonapi:"attr,system_titles,omitempty"`
+	SystemTitles map[string]string      `json:"systemTitles,omitempty" jsonapi:"attr,systemTitles,omitempty"`
 	Publishers   []*PublisherVO         `json:"publishers" jsonapi:"relation,publisher"`
 	Studios      []*StudioVO            `json:"studios" jsonapi:"relation,studio"`
 	Licenses     []*LicenseVO           `json:"licenses" jsonapi:"relation,license"`

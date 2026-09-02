@@ -25,7 +25,7 @@ type VolumeVO struct {
 	// SystemTitles: denormalized system display names keyed by system ID. On a read it carries
 	// the stored snapshot; on a write it is an advisory hint (catalog-api overwrites it from an
 	// authoritative game-systems-api lookup when reachable).
-	SystemTitles map[string]string      `json:"systemTitles,omitempty" jsonapi:"attr,system_titles,omitempty"`
+	SystemTitles map[string]string      `json:"systemTitles,omitempty" jsonapi:"attr,systemTitles,omitempty"`
 	Publishers   []*PublisherVO         `json:"publishers" jsonapi:"relation,publisher"`
 	Studios      []*StudioVO            `json:"studios" jsonapi:"relation,studio"`
 	Licenses     []*LicenseVO           `json:"licenses" jsonapi:"relation,license"`
