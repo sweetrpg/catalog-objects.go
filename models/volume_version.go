@@ -23,14 +23,18 @@ type VolumeVersion struct {
 	// on a submitted version - see design.md's "Staged edit-session assets ride on the submitted
 	// version as separate staged fields". CoverAssetId/SampleAssetIds above stay at their current
 	// live values until promotion happens at accept time.
-	StagedCoverAssetId   *string              `bson:"staged_cover_asset_id,omitempty" json:"staged_cover_asset_id,omitempty" jsonapi:"attr,staged_cover_asset_id,omitempty"`
-	StagedSampleAssetIds []string             `bson:"staged_sample_asset_ids,omitempty" json:"staged_sample_asset_ids,omitempty" jsonapi:"attr,staged_sample_asset_ids,omitempty"`
-	SystemIds            []string             `bson:"system_ids" json:"system_ids" jsonapi:"relation,system"`
-	PublisherIds         []string             `bson:"publisher_ids" json:"publisher_ids" jsonapi:"relation,publisher"`
-	StudioIds            []string             `bson:"studio_ids" json:"studio_ids" jsonapi:"relation,studio"`
-	LicenseIds           []string             `bson:"license_ids" json:"license_ids" jsonapi:"relation,license"`
-	Properties           []modelcore.Property `json:"properties" jsonapi:"attr,properties"`
-	Tags                 []modelcore.Tag      `json:"tags" jsonapi:"attr,tags"`
+	StagedCoverAssetId   *string  `bson:"staged_cover_asset_id,omitempty" json:"staged_cover_asset_id,omitempty" jsonapi:"attr,staged_cover_asset_id,omitempty"`
+	StagedSampleAssetIds []string `bson:"staged_sample_asset_ids,omitempty" json:"staged_sample_asset_ids,omitempty" jsonapi:"attr,staged_sample_asset_ids,omitempty"`
+	SystemIds            []string `bson:"system_ids" json:"system_ids" jsonapi:"relation,system"`
+	// SystemTitles is a denormalized snapshot of each referenced system's display name, keyed by
+	// system ID, captured at write time so volume reads render the system name without a
+	// game-systems-api call. Parallel to SystemIds; a nil/absent map is valid (renders the ID).
+	SystemTitles map[string]string    `bson:"system_titles,omitempty" json:"system_titles,omitempty"`
+	PublisherIds []string             `bson:"publisher_ids" json:"publisher_ids" jsonapi:"relation,publisher"`
+	StudioIds    []string             `bson:"studio_ids" json:"studio_ids" jsonapi:"relation,studio"`
+	LicenseIds   []string             `bson:"license_ids" json:"license_ids" jsonapi:"relation,license"`
+	Properties   []modelcore.Property `json:"properties" jsonapi:"attr,properties"`
+	Tags         []modelcore.Tag      `json:"tags" jsonapi:"attr,tags"`
 
 	State            VersionState `bson:"state" json:"state" jsonapi:"attr,state"`
 	BaseVersion      *int         `bson:"base_version,omitempty" json:"base_version" jsonapi:"attr,base_version,omitempty"`

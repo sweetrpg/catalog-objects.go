@@ -20,14 +20,16 @@ type VolumeVersionVO struct {
 	SampleAssetIds []string `json:"sampleAssetIds" jsonapi:"attr,sampleAssetIds"`
 	// StagedCoverAssetId/StagedSampleAssetIds mirror VolumeVersion's staged fields - see that
 	// model's doc comment.
-	StagedCoverAssetId   *string                `json:"stagedCoverAssetId,omitempty" jsonapi:"attr,staged_cover_asset_id,omitempty"`
-	StagedSampleAssetIds []string               `json:"stagedSampleAssetIds,omitempty" jsonapi:"attr,staged_sample_asset_ids,omitempty"`
-	Systems              []*SystemVO            `json:"systems" jsonapi:"relation,system"`
-	Publishers           []*PublisherVO         `json:"publishers" jsonapi:"relation,publisher"`
-	Studios              []*StudioVO            `json:"studios" jsonapi:"relation,studio"`
-	Licenses             []*LicenseVO           `json:"licenses" jsonapi:"relation,license"`
-	Properties           []modelcore.PropertyVO `json:"properties" jsonapi:"attr,properties"`
-	Tags                 []modelcore.TagVO      `json:"tags" jsonapi:"attr,tags"`
+	StagedCoverAssetId   *string     `json:"stagedCoverAssetId,omitempty" jsonapi:"attr,staged_cover_asset_id,omitempty"`
+	StagedSampleAssetIds []string    `json:"stagedSampleAssetIds,omitempty" jsonapi:"attr,staged_sample_asset_ids,omitempty"`
+	Systems              []*SystemVO `json:"systems" jsonapi:"relation,system"`
+	// SystemTitles: denormalized system display names keyed by system ID - see VolumeVO.
+	SystemTitles map[string]string      `json:"systemTitles,omitempty" jsonapi:"attr,system_titles,omitempty"`
+	Publishers   []*PublisherVO         `json:"publishers" jsonapi:"relation,publisher"`
+	Studios      []*StudioVO            `json:"studios" jsonapi:"relation,studio"`
+	Licenses     []*LicenseVO           `json:"licenses" jsonapi:"relation,license"`
+	Properties   []modelcore.PropertyVO `json:"properties" jsonapi:"attr,properties"`
+	Tags         []modelcore.TagVO      `json:"tags" jsonapi:"attr,tags"`
 
 	State            VersionState `json:"state" jsonapi:"attr,state"`
 	BaseVersion      *int         `json:"baseVersion,omitempty" jsonapi:"attr,base_version,omitempty"`
