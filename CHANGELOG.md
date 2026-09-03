@@ -1,4 +1,11 @@
 
+## 0.6.0 - 2026-09-03
+
+### Added
+- Add updated_at/updated_by to EntityMeta, VolumeMeta, VolumeMetaVO
+
+
+
 ## 0.5.0 - 2026-09-02
 
 ### Added
