@@ -9,6 +9,8 @@ type VolumeMetaVO struct {
 	CurrentVersion int        `json:"currentVersion" jsonapi:"attr,current_version"`
 	CreatedAt      time.Time  `json:"createdAt" jsonapi:"attr,created_at"`
 	CreatedBy      string     `json:"createdBy" jsonapi:"attr,created_by"`
+	UpdatedAt      time.Time  `json:"updatedAt" jsonapi:"attr,updated_at"`
+	UpdatedBy      string     `json:"updatedBy" jsonapi:"attr,updated_by"`
 	DeletedAt      *time.Time `json:"deletedAt,omitempty" jsonapi:"attr,deleted_at,omitempty"`
 	DeletedBy      *string    `json:"deletedBy,omitempty" jsonapi:"attr,deleted_by,omitempty"`
 }
