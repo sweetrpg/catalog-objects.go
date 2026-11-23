@@ -5,3 +5,5 @@ go 1.26.10
 require github.com/sweetrpg/model-core.go v0.0.173
 
 require go.mongodb.org/mongo-driver v1.17.9
+
+require github.com/google/jsonapi v1.0.0
