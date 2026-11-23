@@ -123,3 +123,36 @@ func setAudit(t *testing.T, v any, a modelcore.AuditableVO) {
 		f.Set(reflect.ValueOf(val))
 	}
 }
+
+func TestAuditTimesHaveNoFractionalSecondsAndAreUTC(t *testing.T) {
+	loc := time.FixedZone("EST", -5*3600)
+	del := time.Date(2026, 11, 20, 3, 30, 0, 123456789, loc)
+	in := &VolumeVO{ID: "1", Title: "t"}
+	setAudit(t, in, modelcore.AuditableVO{
+		CreatedAt: time.Date(2026, 1, 2, 3, 4, 5, 999999999, time.UTC),
+		UpdatedAt: time.Date(2026, 6, 7, 8, 9, 10, 500, loc),
+		DeletedAt: &del,
+	})
+	var buf bytes.Buffer
+	if err := jsonapi.MarshalPayload(&buf, in); err != nil {
+		t.Fatal(err)
+	}
+	var doc struct {
+		Data struct {
+			Attributes map[string]any `json:"attributes"`
+		} `json:"data"`
+	}
+	if err := json.Unmarshal(buf.Bytes(), &doc); err != nil {
+		t.Fatal(err)
+	}
+	want := map[string]string{
+		"created_at": "2026-01-02T03:04:05Z",
+		"updated_at": "2026-06-07T13:09:10Z",
+		"deleted_at": "2026-11-20T08:30:00Z",
+	}
+	for k, v := range want {
+		if got := doc.Data.Attributes[k]; got != v {
+			t.Errorf("attributes[%q] = %v, want %q (UTC, whole seconds)", k, got, v)
+		}
+	}
+}
