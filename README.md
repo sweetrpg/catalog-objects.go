@@ -21,7 +21,10 @@ go get github.com/sweetrpg/catalog-objects.go
 
 - `models` - persistence-layer structs (`License`, `Contribution`, `Person`, `Publisher`,
   `Review`, `Studio`, `System`, `Volume`), each embedding `model-core.go`'s `Auditable`
-- `vo` - the matching API-facing value objects, each embedding `model-core.go`'s `AuditableVO`
+- `vo` - the matching API-facing value objects. Each carries the audit fields (`created_at`,
+  `created_by`, `updated_at`, `updated_by`, `deleted_at`, `deleted_by`) as direct fields, not an
+  embedded `AuditableVO`: `google/jsonapi` skips untagged embedded structs, so an embedded one
+  never reaches the wire. Times marshal as RFC 3339 strings.
 
 ## Documentation
 

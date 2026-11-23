@@ -1,4 +1,11 @@
 
+## 0.6.1 - 2026-11-23
+
+### Fixed
+- Expose audit fields as direct jsonapi attributes
+
+
+
 ## 0.6.0 - 2026-09-03
 
 ### Added
