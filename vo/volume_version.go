@@ -20,9 +20,12 @@ type VolumeVersionVO struct {
 	SampleAssetIds []string `json:"sampleAssetIds" jsonapi:"attr,sampleAssetIds"`
 	// StagedCoverAssetId/StagedSampleAssetIds mirror VolumeVersion's staged fields - see that
 	// model's doc comment.
-	StagedCoverAssetId   *string     `json:"stagedCoverAssetId,omitempty" jsonapi:"attr,staged_cover_asset_id,omitempty"`
-	StagedSampleAssetIds []string    `json:"stagedSampleAssetIds,omitempty" jsonapi:"attr,staged_sample_asset_ids,omitempty"`
-	Systems              []*SystemVO `json:"systems" jsonapi:"relation,system"`
+	StagedCoverAssetId   *string  `json:"stagedCoverAssetId,omitempty" jsonapi:"attr,staged_cover_asset_id,omitempty"`
+	StagedSampleAssetIds []string `json:"stagedSampleAssetIds,omitempty" jsonapi:"attr,staged_sample_asset_ids,omitempty"`
+	// Staged file digests, see the model. They're for catalog-api's review check, so not serialized.
+	StagedCoverDigest   *string     `json:"-" jsonapi:"-"`
+	StagedSampleDigests []string    `json:"-" jsonapi:"-"`
+	Systems             []*SystemVO `json:"systems" jsonapi:"relation,system"`
 	// SystemTitles: denormalized system display names keyed by system ID - see VolumeVO.
 	SystemTitles map[string]string      `json:"systemTitles,omitempty" jsonapi:"attr,systemTitles,omitempty"`
 	Publishers   []*PublisherVO         `json:"publishers" jsonapi:"relation,publisher"`
