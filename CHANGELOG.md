@@ -1,4 +1,15 @@
 
+## 0.7.0 - 2026-11-27
+
+### Added
+- Add staged file digests to volume versions
+
+
+### Documentation
+- Add the feature work checkpoint pointer
+
+
+
 ## 0.6.1 - 2026-11-23
 
 ### Fixed
