@@ -25,7 +25,11 @@ type VolumeVersion struct {
 	// live values until promotion happens at accept time.
 	StagedCoverAssetId   *string  `bson:"staged_cover_asset_id,omitempty" json:"staged_cover_asset_id,omitempty" jsonapi:"attr,staged_cover_asset_id,omitempty"`
 	StagedSampleAssetIds []string `bson:"staged_sample_asset_ids,omitempty" json:"staged_sample_asset_ids,omitempty" jsonapi:"attr,staged_sample_asset_ids,omitempty"`
-	SystemIds            []string `bson:"system_ids" json:"system_ids" jsonapi:"relation,system"`
+	// StagedCoverDigest/StagedSampleDigests are SHA-256 hex digests of the staged files, taken at
+	// submit. StagedSampleDigests is in StagedSampleAssetIds order.
+	StagedCoverDigest   *string  `bson:"staged_cover_digest,omitempty" json:"staged_cover_digest,omitempty" jsonapi:"attr,staged_cover_digest,omitempty"`
+	StagedSampleDigests []string `bson:"staged_sample_digests,omitempty" json:"staged_sample_digests,omitempty" jsonapi:"attr,staged_sample_digests,omitempty"`
+	SystemIds           []string `bson:"system_ids" json:"system_ids" jsonapi:"relation,system"`
 	// SystemTitles is a denormalized snapshot of each referenced system's display name, keyed by
 	// system ID, captured at write time so volume reads render the system name without a
 	// game-systems-api call. Parallel to SystemIds; a nil/absent map is valid (renders the ID).
